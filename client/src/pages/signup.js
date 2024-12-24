@@ -1,13 +1,23 @@
 import React, { useState } from "react";
 import "../index.css"; // Import Tailwind CSS
+import axios from "axios";
+import { useNavigate, Navigate } from "react-router-dom";
 
 function SignUp() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    axios
+      .post("http://localhost:3001/users", { username, password })
+      .then((result) => {
+        console.log(result);
+        navigate("/login");
+      })
+      .catch((err) => console.log(err));
   };
 
   return (
