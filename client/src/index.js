@@ -6,6 +6,9 @@ import Home from "./pages/home";
 import Login from "./pages/login";
 import Create from "./pages/create";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Message from "./pages/message";
+import Follow from "./pages/follow";
+import Profile from "./pages/profile";
 
 const router = createBrowserRouter([
   {
@@ -22,8 +25,20 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "/create",
+    path: "/create/:id",
     element: <Create />,
+  },
+  {
+    path: "/message",
+    element: <Message />,
+  },
+  {
+    path: "/follow",
+    element: <Follow />,
+  },
+  {
+    path: "/profile",
+    element: <Profile />,
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));

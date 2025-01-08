@@ -8,17 +8,22 @@ function Login() {
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    axios
-      .post("http://localhost:3001/users/login", { username, password })
-      .then((result) => {
-        console.log(result);
-      })
-      .catch((err) => console.log(err));
-    setUsername("");
-    setPassword("");
-    navigate("/home");
+    try {
+      const response = await axios.post("http://localhost:3001/users/login", {
+        username,
+        password,
+      });
+
+      const token = response.data.token;
+      localStorage.setItem("token", token);
+      setUsername("");
+      setPassword("");
+      navigate("/home");
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
