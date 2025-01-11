@@ -22,4 +22,5 @@ mongoose
 
 app.use("/users", require("./routes/userRoutes"));
 app.use("/posts", require("./routes/postRoutes"));
+app.use("/library", require("./routes/libraryRoutes"));
 app.listen(3001, () => console.log("Server started"));

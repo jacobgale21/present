@@ -41,10 +41,10 @@ function NavBar() {
             Profile
           </a>
           <a
-            href="/notifications"
+            href="/library"
             className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
           >
-            Notifications
+            Libraries
           </a>
           <a
             href="/follow"

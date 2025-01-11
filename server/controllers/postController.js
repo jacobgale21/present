@@ -38,12 +38,12 @@ const getDatePost = asyncHandler(async (req, res) => {
     const posts = await Post.find({ date: req.body.date });
     res.status(200).json(posts);
   } catch (err) {
-    console.log(posts);
+    console.log({ error: err.message });
   }
 });
-const getPost = (module.exports = {
+module.exports = {
   postPost,
   getPosts,
   getUserPost,
   getDatePost,
-});
+};

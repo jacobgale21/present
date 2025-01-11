@@ -20,7 +20,6 @@ function Create() {
           },
         }
       );
-      console.log(response.data, "Post created");
       setCaption("");
       setDate("");
       setImageURL("");

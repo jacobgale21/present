@@ -9,6 +9,8 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Message from "./pages/message";
 import Follow from "./pages/follow";
 import Profile from "./pages/profile";
+import Libraries from "./pages/library";
+import CreateLib from "./pages/createLib";
 
 const router = createBrowserRouter([
   {
@@ -39,6 +41,14 @@ const router = createBrowserRouter([
   {
     path: "/profile",
     element: <Profile />,
+  },
+  {
+    path: "/libraries/:id",
+    element: <Libraries />,
+  },
+  {
+    path: "/library",
+    element: <CreateLib />,
   },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
